@@ -10,7 +10,7 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   $ python -m venv .venv
 
   # aktywowanie hermetycznego środowiska
-  $ source .venv/Source/activate
+  $ source .venv/Scripts/activate
   $ pip install -r requirements.txt
   $ pip install -r test_requirements.txt
 
@@ -48,7 +48,7 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   ...
 
   # aktywacja 
-  $ source .venv/Source/activate
+  $ source .venv/Scripts/activate
   ```
 
 - Integracja z TravisCI:
@@ -57,30 +57,3 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   # miejsce na twoje notatki
   ```
 
-# Pomocnicze
-
-## Ubuntu
-
-- Instalacja dockera: [dockerce howto](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-
-## Centos
-
-- Instalacja docker-a:
-
-  ```
-  $ yum remove docker \
-        docker-common \
-        container-selinux \
-        docker-selinux \
-        docker-engine
-
-  $ yum install -y yum-utils
-
-  $ yum-config-manager \
-      --add-repo \
-      https://download.docker.com/linux/centos/docker-ce.repo
-
-  $ yum makecache fast
-  $ yum install -y docker-ce
-  $ systemctl start docker
-  ```
