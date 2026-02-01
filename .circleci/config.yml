@@ -1,6 +1,15 @@
 version: 2.1
 jobs:
-  build-and-test:
+  lint:
+    machine:
+      image: ubuntu-2004:current
+    steps:
+      - checkout
+      - run: make deps
+      - run:
+          name: Run Linter
+          command: make lint
+  test:
     machine:
       image: ubuntu-2004:current
     steps:
@@ -10,4 +19,7 @@ jobs:
 workflows:
   basic:
     jobs:
-      - build-and-test
+      - lint
+      - test:
+          requires:
+            - lint
