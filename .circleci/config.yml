@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   lint:
     machine:
-      image: ubuntu-2004:current
+      image: ubuntu-2204:2024.01.2
     steps:
       - checkout
       - run: make deps
@@ -12,7 +12,7 @@ jobs:
       - run: make docker_build
   test:
     machine:
-      image: ubuntu-2004:current
+      image: ubuntu-2204:2024.01.2
     steps:
       - checkout
       - run: make deps
